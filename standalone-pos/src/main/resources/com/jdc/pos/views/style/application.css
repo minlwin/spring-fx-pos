@@ -1,0 +1,99 @@
+* {
+    primary : #230444;
+    secondary: #90303d;
+    primary-light: #ed8240;
+    secondary-light: #d2ebe9;
+}
+
+.login-view {
+    -fx-pref-width: 420px;
+    -fx-background-color: secondary-light;
+}
+
+.login-title {
+    -fx-alignment: center-left;
+    -fx-padding: 16px;
+    -fx-background-color: primary;
+}
+
+.login-title > .header {
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
+
+.login-body {
+    -fx-padding: 0 64 16 16;
+}
+
+.al-center-left {
+    -fx-alignment: center-left;
+}
+
+.sp-5 {
+    -fx-spacing: 5px;
+}
+
+.wid-120 {
+    -fx-pref-width: 120px;
+}
+
+.text-field, .password-field, .button {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-color: secondary;
+}
+
+.button:hover, .button:focused {
+    -fx-background-color : secondary;
+    -fx-text-fill: white;
+}
+
+.main-frame {
+    -fx-pref-width: 1280px;
+    -fx-pref-height: 780px;
+}
+
+.side-bar {
+    -fx-padding: 10 0 0 0;
+    -fx-background-color: primary;
+}
+
+.side-bar-menu {
+    -fx-alignment: center;
+    -fx-spacing: 5px;
+    -fx-pref-height: 70px;
+    -fx-pref-width: 100px;
+    -fx-min-width:100px;
+}
+
+.side-bar-menu:hover {
+    -fx-background-color: secondary-light;
+}
+
+.side-bar-menu:hover .label, .side-bar-menu:hover SVGPath{
+    -fx-fill: primary;
+    -fx-text-fill: primary;
+}
+
+.side-bar-menu .label, .side-bar-menu SVGPath {
+    -fx-fill: white;
+    -fx-text-fill: white;
+}
+
+.side-bar-menu.active {
+    -fx-background-color: primary-light;
+}
+
+.content-view {
+    -fx-pref-width: 1180px;
+    -fx-pref-height: 780px;
+}
+
+.content-view-header {
+    -fx-padding: 20px;
+}
+
+.content-view-header > .title {
+    -fx-font-size: 20px;
+}
+

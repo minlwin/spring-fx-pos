@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-frame" stylesheets="@style/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.views.MainFrame">
+   <children>
+      <VBox fx:id="sideBar" styleClass="side-bar">
+         <children>
+            <VBox id="Home" onMouseClicked="#clickMenu">
+               <children>
+                  <SVGPath content="M28 15.5v-13c0-0.266-0.234-0.5-0.5-0.5h-25c-0.266 0-0.5 0.234-0.5 0.5v13c0 0.266 0.234 0.5 0.5 0.5h25c0.266 0 0.5-0.234 0.5-0.5zM30 2.5v17c0 1.375-1.125 2.5-2.5 2.5h-8.5c0 1.328 1 2.453 1 3s-0.453 1-1 1h-8c-0.547 0-1-0.453-1-1 0-0.578 1-1.641 1-3h-8.5c-1.375 0-2.5-1.125-2.5-2.5v-17c0-1.375 1.125-2.5 2.5-2.5h25c1.375 0 2.5 1.125 2.5 2.5z" />
+                  <Label text="HOME" />
+               </children>
+               <styleClass>
+                  <String fx:value="side-bar-menu" />
+                  <String fx:value="active" />
+               </styleClass>
+            </VBox>
+            <VBox id="Pos" layoutX="10.0" layoutY="10.0" onMouseClicked="#clickMenu" styleClass="side-bar-menu">
+               <children>
+                  <SVGPath content="M10 24c0 1.094-0.906 2-2 2s-2-0.906-2-2 0.906-2 2-2 2 0.906 2 2zM24 24c0 1.094-0.906 2-2 2s-2-0.906-2-2 0.906-2 2-2 2 0.906 2 2zM26 7v8c0 0.5-0.391 0.938-0.891 1l-16.312 1.906c0.078 0.359 0.203 0.719 0.203 1.094 0 0.359-0.219 0.688-0.375 1h14.375c0.547 0 1 0.453 1 1s-0.453 1-1 1h-16c-0.547 0-1-0.453-1-1 0-0.484 0.703-1.656 0.953-2.141l-2.766-12.859h-3.187c-0.547 0-1-0.453-1-1s0.453-1 1-1h4c1.047 0 1.078 1.25 1.234 2h18.766c0.547 0 1 0.453 1 1z" />
+                  <Label text="POS" />
+               </children>
+            </VBox>
+            <VBox id="Sales" layoutX="10.0" layoutY="80.0" onMouseClicked="#clickMenu" styleClass="side-bar-menu">
+               <children>
+                  <SVGPath content="M28 15.5v-13c0-0.266-0.234-0.5-0.5-0.5h-25c-0.266 0-0.5 0.234-0.5 0.5v13c0 0.266 0.234 0.5 0.5 0.5h25c0.266 0 0.5-0.234 0.5-0.5zM30 2.5v17c0 1.375-1.125 2.5-2.5 2.5h-8.5c0 1.328 1 2.453 1 3s-0.453 1-1 1h-8c-0.547 0-1-0.453-1-1 0-0.578 1-1.641 1-3h-8.5c-1.375 0-2.5-1.125-2.5-2.5v-17c0-1.375 1.125-2.5 2.5-2.5h25c1.375 0 2.5 1.125 2.5 2.5z" />
+                  <Label text="SALES" />
+               </children>
+            </VBox>
+            <VBox id="Category" layoutX="10.0" layoutY="150.0" onMouseClicked="#clickMenu" styleClass="side-bar-menu">
+               <children>
+                  <SVGPath content="M7 7c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM23.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578s-1.047-0.219-1.406-0.578l-11.172-11.188c-0.797-0.781-1.422-2.297-1.422-3.406v-6.5c0-1.094 0.906-2 2-2h6.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422zM29.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578-0.812 0-1.219-0.375-1.75-0.922l7.344-7.344c0.359-0.359 0.578-0.875 0.578-1.406s-0.219-1.047-0.578-1.422l-11.172-11.156c-0.797-0.797-2.312-1.422-3.422-1.422h3.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422z" />
+                  <Label text="CATEGORY" />
+               </children>
+            </VBox>
+            <VBox id="Product" layoutX="10.0" layoutY="220.0" onMouseClicked="#clickMenu" styleClass="side-bar-menu">
+               <children>
+                  <SVGPath content="M14.5 21.187v-11.188h-5v11.188c0 0.547 0.453 0.812 1 0.812h3c0.547 0 1-0.266 1-0.812zM7.375 8h3.047l-1.969-2.516c-0.172-0.203-0.547-0.484-1.078-0.484-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5zM18.125 6.5c0-0.828-0.672-1.5-1.5-1.5-0.531 0-0.906 0.281-1.078 0.484l-1.953 2.516h3.031c0.828 0 1.5-0.672 1.5-1.5zM24 10.5v5c0 0.281-0.219 0.5-0.5 0.5h-1.5v6.5c0 0.828-0.672 1.5-1.5 1.5h-17c-0.828 0-1.5-0.672-1.5-1.5v-6.5h-1.5c-0.281 0-0.5-0.219-0.5-0.5v-5c0-0.281 0.219-0.5 0.5-0.5h6.875c-1.937 0-3.5-1.563-3.5-3.5s1.563-3.5 3.5-3.5c1.047 0 2.016 0.438 2.625 1.203l2 2.578 2-2.578c0.609-0.766 1.578-1.203 2.625-1.203 1.937 0 3.5 1.563 3.5 3.5s-1.563 3.5-3.5 3.5h6.875c0.281 0 0.5 0.219 0.5 0.5z" />
+                  <Label text="PORDUCT" />
+               </children>
+            </VBox>
+            <VBox id="Exit" layoutX="10.0" layoutY="290.0" onMouseClicked="#clickMenu" styleClass="side-bar-menu">
+               <children>
+                  <SVGPath content="M24 14c0 6.609-5.391 12-12 12s-12-5.391-12-12c0-3.797 1.75-7.297 4.797-9.578 0.891-0.672 2.141-0.5 2.797 0.391 0.672 0.875 0.484 2.141-0.391 2.797-2.031 1.531-3.203 3.859-3.203 6.391 0 4.406 3.594 8 8 8s8-3.594 8-8c0-2.531-1.172-4.859-3.203-6.391-0.875-0.656-1.062-1.922-0.391-2.797 0.656-0.891 1.922-1.062 2.797-0.391 3.047 2.281 4.797 5.781 4.797 9.578zM14 2v10c0 1.094-0.906 2-2 2s-2-0.906-2-2v-10c0-1.094 0.906-2 2-2s2 0.906 2 2z" />
+                  <Label text="EXIT" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <StackPane fx:id="contentView" HBox.hgrow="ALWAYS" />
+   </children>
+</HBox>
