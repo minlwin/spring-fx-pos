@@ -2,6 +2,7 @@ package com.jdc.pos.views;
 
 import com.jdc.pos.PosApplication;
 import com.jdc.pos.utils.Menu;
+import com.jdc.pos.views.common.Dialog;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -30,7 +31,12 @@ public class MainFrame {
         Node node = (Node) event.getSource();
 
         if(node.getId().equals("Exit")) {
-            sideBar.getScene().getWindow().hide();
+            // need to confirm
+            Dialog.DialogBuilder.builder()
+                    .title("Confirm")
+                    .message("Do you want to exit POS?")
+                    .okActionListener(() -> sideBar.getScene().getWindow().hide())
+                    .build().show();
         } else {
             Menu menu = Menu.valueOf(node.getId());
             loadView(menu);

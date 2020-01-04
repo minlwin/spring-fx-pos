@@ -1,8 +1,8 @@
 * {
-    primary : #230444;
-    secondary: #90303d;
-    primary-light: #ed8240;
-    secondary-light: #d2ebe9;
+    primary : #464159;
+    secondary: #6c7b95;
+    primary-light: #8bbabb;
+    secondary-light: #c7f0db;
 }
 
 .login-view {
@@ -44,8 +44,8 @@
 }
 
 .button:hover, .button:focused {
-    -fx-background-color : secondary;
-    -fx-text-fill: white;
+    -fx-background-color : primary;
+    -fx-text-fill: secondary-light;
 }
 
 .main-frame {
@@ -95,5 +95,45 @@
 
 .content-view-header > .title {
     -fx-font-size: 20px;
+}
+
+.dialog {
+    -fx-pref-width: 600px;
+    -fx-background-color: secondary-light;
+}
+
+.dialog-icon {
+    -fx-pref-width: 160px;
+    -fx-alignment: center;
+    -fx-background-color: primary;
+}
+
+.dialog-icon SVGPath {
+    -fx-fill: secondary-light;
+}
+
+.dialog-body {
+    -fx-padding: 20px;
+    -fx-alignment: center-left;
+}
+
+.dialog-title {
+    -fx-font-size: 24px;
+}
+
+.dialog-message-box {
+    -fx-padding: 20 0 20 0;
+}
+
+.dialog-message-box Label {
+    -fx-font-size: 18px;
+}
+
+.dialog-button-box {
+    -fx-alignment: center-right;
+}
+
+.sp-10 {
+    -fx-spacing: 10;
 }
 
