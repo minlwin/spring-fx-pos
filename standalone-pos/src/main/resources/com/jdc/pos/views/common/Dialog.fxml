@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="dialog" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.views.common.Dialog">
    <children>
       <VBox styleClass="dialog-icon">
@@ -25,8 +24,8 @@
             </HBox>
             <HBox>
                <children>
-                  <Button fx:id="okBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="wid-120" text="OK" />
-                  <Button mnemonicParsing="false" onAction="#cancel" styleClass="wid-120" text="CANCEL" />
+                  <Button fx:id="okBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#okAction" styleClass="wid-120" text="OK" />
+                  <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#cancel" styleClass="wid-120" text="CANCEL" />
                </children>
                <styleClass>
                   <String fx:value="sp-10" />

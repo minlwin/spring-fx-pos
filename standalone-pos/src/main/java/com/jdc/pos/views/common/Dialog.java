@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -24,6 +24,29 @@ public class Dialog {
 
     private Stage stage;
 
+    private ActionListener actionListener;
+
+    @FXML
+    private void okAction() {
+        if(null != actionListener) {
+            cancel();
+            actionListener.doAction();
+        }
+    }
+
+    private void attachEvents() {
+        closeBtn.getScene().setOnKeyPressed(event -> {
+            if(event.getCode() == KeyCode.ENTER) {
+                if(closeBtn.isFocused()) {
+                    cancel();
+                }
+
+                if(okBtn.isFocused()) {
+                    okAction();
+                }
+            }
+        });
+    }
     @FXML
     private void cancel() {
         okBtn.getScene().getWindow().hide();
@@ -73,16 +96,15 @@ public class Dialog {
 
                 controller.title.setText(this.title);
                 controller.message.setText(this.message);
+                controller.actionListener = okActionListener;
 
-                if(null != okActionListener) {
-                    controller.okBtn.setOnAction(event -> {
-                        controller.cancel();
-                        okActionListener.doAction();
-                    });
-                } else {
+                if(null == okActionListener) {
                     controller.okBtn.setVisible(false);
                     controller.closeBtn.setText("CLOSE");
                 }
+
+                controller.attachEvents();
+
                 return controller;
             } catch (Exception e) {
                 e.printStackTrace();
