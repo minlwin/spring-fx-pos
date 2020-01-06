@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: jdbc:hsqldb:mem:testDB
+    url: jdbc:hsqldb:file:database/pos
     username: sa
     password: sa
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         show_sql: true

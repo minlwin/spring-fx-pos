@@ -3,5 +3,5 @@ package com.jdc.pos.views;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class Pos {
+public class Pos extends AbstractController{
 }

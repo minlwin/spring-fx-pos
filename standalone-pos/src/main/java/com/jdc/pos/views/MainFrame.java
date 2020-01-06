@@ -59,6 +59,10 @@ public class MainFrame {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(menu.getFxml()));
             loader.setControllerFactory(PosApplication.getApplicationContext()::getBean);
             Parent view = loader.load();
+
+            AbstractController controller = loader.getController();
+            controller.setTitle(menu);
+
             contentView.getChildren().add(view);
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,6 +75,7 @@ public class MainFrame {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(MainFrame.class.getResource("MainFrame.fxml"));
             stage.setScene(new Scene(root));
+            stage.setFullScreen(true);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

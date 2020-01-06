@@ -8,7 +8,7 @@
    <children>
       <HBox styleClass="content-view-header">
          <children>
-            <Label styleClass="title" text="Sales" />
+            <Label fx:id="title" styleClass="title" text="Sales" />
          </children>
       </HBox>
    </children>

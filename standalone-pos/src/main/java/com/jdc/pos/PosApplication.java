@@ -1,5 +1,6 @@
 package com.jdc.pos;
 
+import com.jdc.pos.model.BaseRepositoryImpl;
 import com.jdc.pos.views.Login;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -7,9 +8,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @SpringBootApplication
+@EnableJpaRepositories(repositoryBaseClass = BaseRepositoryImpl.class)
 public class PosApplication extends Application {
 
     private static ConfigurableApplicationContext applicationContext;

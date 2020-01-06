@@ -18,7 +18,7 @@
 
 .login-title > .header {
     -fx-font-size: 20px;
-    -fx-text-fill: white;
+    -fx-text-fill: secondary-light;
 }
 
 .login-body {
@@ -37,10 +37,24 @@
     -fx-pref-width: 120px;
 }
 
-.text-field, .password-field, .button {
+.text-field, .password-field, .button, .combo-box {
     -fx-background-color: transparent;
     -fx-border-style: solid;
     -fx-border-color: secondary;
+}
+
+.text-area {
+    -fx-pref-height: 80px;
+    -fx-border-style: solid;
+    -fx-border-color: secondary;
+}
+
+.text-area,
+.text-area .scroll-pane,
+.text-area .scroll-pane .viewport,
+.text-area .scroll-pane .content
+ {
+    -fx-background-color: transparent;
 }
 
 .button:hover, .button:focused {
@@ -76,17 +90,19 @@
 }
 
 .side-bar-menu .label, .side-bar-menu SVGPath {
-    -fx-fill: white;
-    -fx-text-fill: white;
+    -fx-fill: secondary-light;
+    -fx-text-fill: secondary-light;
 }
 
 .side-bar-menu.active {
-    -fx-background-color: primary-light;
+    -fx-background-color: secondary;
 }
 
 .content-view {
     -fx-pref-width: 1180px;
     -fx-pref-height: 780px;
+    -fx-max-width: 5000px;
+    -fx-max-height: 3000px;
 }
 
 .content-view-header {
@@ -94,8 +110,22 @@
 }
 
 .content-view-header > .title {
-    -fx-font-size: 20px;
+    -fx-font-size: 32px;
 }
+
+.add-button {
+    -fx-alignment: center;
+    -fx-pref-width: 100px;
+}
+
+.add-button:hover {
+    -fx-background-color: primary-light;
+}
+
+.add-button:hover SVGPath {
+    -fx-fill: secondary-light;
+}
+
 
 .dialog {
     -fx-pref-width: 600px;
@@ -104,7 +134,8 @@
 
 .dialog-icon {
     -fx-pref-width: 160px;
-    -fx-alignment: center;
+    -fx-alignment: top-center;
+    -fx-padding: 50 0 0 0;
     -fx-background-color: primary;
 }
 
@@ -122,18 +153,60 @@
 }
 
 .dialog-message-box {
-    -fx-padding: 20 0 20 0;
+    -fx-padding: 10 0 20 0;
+    -fx-spacing: 5;
 }
 
-.dialog-message-box Label {
+.dialog-input-box {
+    -fx-spacing: 5;
+}
+
+.dialog-message-box > Label {
     -fx-font-size: 18px;
 }
 
 .dialog-button-box {
     -fx-alignment: center-right;
+    -fx-spacing: 10px;
 }
 
 .sp-10 {
     -fx-spacing: 10;
 }
 
+.category-container {
+    -fx-padding: 0 20 20 20;
+    -fx-vgap: 20;
+    -fx-hgap: 20;
+}
+
+.category-item {
+    -fx-alignment: center-left;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-pref-width: 240px;
+    -fx-background-color: secondary;
+}
+
+.category-item Label {
+    -fx-font-size: 24px;
+    -fx-text-fill: secondary-light;
+}
+
+.category-item SVGPath {
+    -fx-fill: secondary-light;
+}
+
+.search-bar {
+    -fx-padding: 0 0 0 20;
+    -fx-spacing: 10;
+}
+
+.search-bar > TextField, .search-bar > ComboBox {
+    -fx-pref-width: 200px;
+    -fx-max-width: 280px;
+}
+
+.table-wrapper {
+    -fx-padding: 20;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox styleClass="dialog" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.views.popups.CategoryEdit">
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="dialog-icon">
+         <children>
+            <SVGPath content="M7 7c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM23.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578s-1.047-0.219-1.406-0.578l-11.172-11.188c-0.797-0.781-1.422-2.297-1.422-3.406v-6.5c0-1.094 0.906-2 2-2h6.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422z" scaleX="3.0" scaleY="3.0" />
+         </children>
+      </VBox>
+      <VBox styleClass="dialog-body" HBox.hgrow="ALWAYS">
+         <children>
+            <Label fx:id="title" styleClass="dialog-title" text="Label" />
+            <VBox styleClass="dialog-message-box">
+               <children>
+                  <Label fx:id="message" />
+                  <VBox styleClass="dialog-input-box">
+                     <children>
+                        <Label text="Category Name" />
+                        <TextField fx:id="name" promptText="Enter Category  Name" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <HBox styleClass="dialog-button-box">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#close" styleClass="wid-120" text="CLOSE" />
+                  <Button layoutX="290.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" styleClass="wid-120" text="SAVE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

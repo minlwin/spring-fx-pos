@@ -2,14 +2,26 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="content-view" stylesheets="@style/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.views.Category">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="content-view" stylesheets="@style/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.views.Categories">
    <children>
-      <HBox styleClass="content-view-header">
+      <HBox>
          <children>
-            <Label styleClass="title" text="Category" />
+            <HBox styleClass="content-view-header" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="title" styleClass="title" text="Category" />
+               </children>
+            </HBox>
+            <VBox onMouseClicked="#addNew" styleClass="add-button">
+               <children>
+                  <SVGPath content="M22 11.5v3c0 0.828-0.672 1.5-1.5 1.5h-6.5v6.5c0 0.828-0.672 1.5-1.5 1.5h-3c-0.828 0-1.5-0.672-1.5-1.5v-6.5h-6.5c-0.828 0-1.5-0.672-1.5-1.5v-3c0-0.828 0.672-1.5 1.5-1.5h6.5v-6.5c0-0.828 0.672-1.5 1.5-1.5h3c0.828 0 1.5 0.672 1.5 1.5v6.5h6.5c0.828 0 1.5 0.672 1.5 1.5z" scaleX="1.5" scaleY="1.5" />
+               </children>
+            </VBox>
          </children>
       </HBox>
+      <TilePane fx:id="container" prefHeight="200.0" prefWidth="200.0" styleClass="category-container" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>
