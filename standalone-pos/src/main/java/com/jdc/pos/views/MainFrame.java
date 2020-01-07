@@ -75,7 +75,6 @@ public class MainFrame {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(MainFrame.class.getResource("MainFrame.fxml"));
             stage.setScene(new Scene(root));
-            stage.setFullScreen(true);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

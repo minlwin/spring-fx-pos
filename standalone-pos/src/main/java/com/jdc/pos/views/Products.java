@@ -1,5 +1,6 @@
 package com.jdc.pos.views;
 
+import com.jdc.pos.model.PosException;
 import com.jdc.pos.model.entity.Category;
 import com.jdc.pos.model.entity.Product;
 import com.jdc.pos.model.service.CategoryService;
@@ -8,9 +9,13 @@ import com.jdc.pos.views.common.Dialog;
 import com.jdc.pos.views.popups.ProductEdit;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Controller
@@ -72,6 +77,44 @@ public class Products extends AbstractController {
         category.setValue(null);
         name.clear();
         tableView.getItems().clear();
+    }
+
+    @FXML
+    private void upload() {
+
+        try {
+            // get category
+            Category category = this.category.getValue();
+
+            if(null == category) {
+                throw new PosException("Please select target category for upload.");
+            }
+
+            // open file chooser
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Upload Product TSV File");
+            Path desktop = Paths.get(System.getProperty("user.home")).resolve("Desktop");
+            fileChooser.setInitialDirectory(desktop.toFile());
+            fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("Tab Separated File", "*.tsv"));
+
+            File file = fileChooser.showOpenDialog(this.category.getScene().getWindow());
+
+            if(null != file) {
+                // upload file
+                productService.upload(category, file);
+
+                // refresh table (search)
+                name.clear();
+                search();
+            }
+
+        } catch (PosException e) {
+            Dialog.DialogBuilder.builder().title("Warning")
+                    .message(e.getMessage())
+                    .build().show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

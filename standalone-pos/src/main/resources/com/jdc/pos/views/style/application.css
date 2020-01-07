@@ -57,6 +57,29 @@
     -fx-background-color: transparent;
 }
 
+.table-view {
+    -fx-padding: 0px;
+	-fx-border-style: solid;
+	-fx-border-width: 0.5;
+	-fx-border-color: grey;
+}
+
+.table-view, .table-view:focused {
+	-fx-background-color: transparent;
+}
+
+.table-view .column-header,
+.table-view .column-header-background
+ {
+	-fx-background-color: secondary;
+	-fx-pref-height: 30px;
+}
+
+.table-view .column-header .label{
+	-fx-text-fill: secondary-light;
+}
+
+
 .button:hover, .button:focused {
     -fx-background-color : primary;
     -fx-text-fill: secondary-light;
@@ -106,7 +129,7 @@
 }
 
 .content-view-header {
-    -fx-padding: 20px;
+    -fx-padding: 20 0 10 20;
 }
 
 .content-view-header > .title {
@@ -115,7 +138,7 @@
 
 .add-button {
     -fx-alignment: center;
-    -fx-pref-width: 100px;
+    -fx-pref-width: 80px;
 }
 
 .add-button:hover {

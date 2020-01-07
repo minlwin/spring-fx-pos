@@ -6,11 +6,11 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="content-view" stylesheets="@style/application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.views.Products">
    <children>
       <HBox>
@@ -22,7 +22,7 @@
             </HBox>
             <VBox onMouseClicked="#addNew" styleClass="add-button">
                <children>
-                  <SVGPath content="M22 11.5v3c0 0.828-0.672 1.5-1.5 1.5h-6.5v6.5c0 0.828-0.672 1.5-1.5 1.5h-3c-0.828 0-1.5-0.672-1.5-1.5v-6.5h-6.5c-0.828 0-1.5-0.672-1.5-1.5v-3c0-0.828 0.672-1.5 1.5-1.5h6.5v-6.5c0-0.828 0.672-1.5 1.5-1.5h3c0.828 0 1.5 0.672 1.5 1.5v6.5h6.5c0.828 0 1.5 0.672 1.5 1.5z" scaleX="1.5" scaleY="1.5" />
+                  <SVGPath content="M22 11.5v3c0 0.828-0.672 1.5-1.5 1.5h-6.5v6.5c0 0.828-0.672 1.5-1.5 1.5h-3c-0.828 0-1.5-0.672-1.5-1.5v-6.5h-6.5c-0.828 0-1.5-0.672-1.5-1.5v-3c0-0.828 0.672-1.5 1.5-1.5h6.5v-6.5c0-0.828 0.672-1.5 1.5-1.5h3c0.828 0 1.5 0.672 1.5 1.5v6.5h6.5c0.828 0 1.5 0.672 1.5 1.5z" />
                </children>
             </VBox>
          </children>
@@ -33,38 +33,39 @@
             <TextField fx:id="name" promptText="Product Name" />
             <Button mnemonicParsing="false" onAction="#search" styleClass="wid-120" text="SEARCH" />
             <Button layoutX="363.0" layoutY="10.0" mnemonicParsing="false" onAction="#clear" styleClass="wid-120" text="CLEAR" />
+            <Button layoutX="580.0" layoutY="10.0" mnemonicParsing="false" onAction="#upload" styleClass="wid-120" text="UPLOAD" />
          </children>
       </HBox>
       <VBox styleClass="table-wrapper" VBox.vgrow="ALWAYS">
          <children>
             <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
               <columns>
-                  <TableColumn maxWidth="65.0" minWidth="65.0" prefWidth="65.0" text="ID" >
+                  <TableColumn maxWidth="65.0" minWidth="65.0" prefWidth="65.0" text="ID">
                       <cellValueFactory>
                           <PropertyValueFactory property="id" />
                       </cellValueFactory>
                   </TableColumn>
-                  <TableColumn maxWidth="230.0" minWidth="230.0" prefWidth="230.0" text="Category" >
+                  <TableColumn maxWidth="230.0" minWidth="230.0" prefWidth="230.0" text="Category">
                       <cellValueFactory>
                           <PropertyValueFactory property="category" />
                       </cellValueFactory>
                   </TableColumn>
-                  <TableColumn maxWidth="220.0" minWidth="220.0" prefWidth="220.0" text="Product Name" >
+                  <TableColumn maxWidth="220.0" minWidth="220.0" prefWidth="220.0" text="Product Name">
                       <cellValueFactory>
                           <PropertyValueFactory property="name" />
                       </cellValueFactory>
                   </TableColumn>
-                  <TableColumn maxWidth="160.0" minWidth="160.0" prefWidth="160.0" text="Price" >
+                  <TableColumn maxWidth="160.0" minWidth="160.0" prefWidth="160.0" text="Price">
                       <cellValueFactory>
                           <PropertyValueFactory property="priceStr" />
                       </cellValueFactory>
                   </TableColumn>
-                  <TableColumn maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Valid" >
+                  <TableColumn maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Valid">
                       <cellValueFactory>
                           <PropertyValueFactory property="validStr" />
                       </cellValueFactory>
                   </TableColumn>
-                  <TableColumn prefWidth="120.0" text="Remark" >
+                  <TableColumn prefWidth="120.0" text="Remark">
                       <cellValueFactory>
                           <PropertyValueFactory property="remark" />
                       </cellValueFactory>

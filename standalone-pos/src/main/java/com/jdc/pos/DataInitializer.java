@@ -13,24 +13,29 @@ import org.springframework.context.annotation.Configuration;
 public class DataInitializer {
 
     @Autowired
-    private CategoryRepo repo;
+    private CategoryRepo categoryRepo;
     @Autowired
     private AccountRepo accountRepo;
 
     @Bean
     public CommandLineRunner getCommandLineRunner() {
         return args -> {
-            repo.save(new Category("Foods"));
-            repo.save(new Category("Drinks"));
-            repo.save(new Category("Accessories"));
 
-            Account admin  = new Account();
-            admin.setLoginId("admin");
-            admin.setName("Admin User");
-            admin.setRole(Account.Role.Admin);
-            admin.setPassword("admin");
+            if(categoryRepo.count() == 0) {
+                categoryRepo.save(new Category("Foods"));
+                categoryRepo.save(new Category("Drinks"));
+                categoryRepo.save(new Category("Accessories"));
+            }
 
-            accountRepo.save(admin);
+            if(accountRepo.count() == 0) {
+                Account admin  = new Account();
+                admin.setLoginId("admin");
+                admin.setName("Admin User");
+                admin.setRole(Account.Role.Admin);
+                admin.setPassword("admin");
+
+                accountRepo.save(admin);
+            }
         };
     }
 }
